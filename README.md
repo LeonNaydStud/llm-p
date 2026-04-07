@@ -32,12 +32,24 @@ uv pip install -r <(uv pip compile pyproject.toml)
 ```
 
 ### 5. Настройка переменных окружения
-Создайте файл `.env` в корне проекта:
-```env
-OPENROUTER_API_KEY=ваш_ключ_openrouter
-JWT_SECRET=ваш_секретный_ключ
-```
 
+Создайте файл `.env` в корне проекта со следующим содержимым:
+
+```env
+APP_NAME=llm-p
+ENV=local
+
+JWT_SECRET=<change_me_super_secret>
+JWT_ALG=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+
+SQLITE_PATH=./app.db
+
+OPENROUTER_API_KEY=<ваш_ключ_openrouter>
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+OPENROUTER_MODEL=stepfun/step-3.5-flash:free
+OPENROUTER_SITE_URL=https://example.com
+OPENROUTER_APP_NAME=llm-fastapi-openrouter
 ### 6. Запуск сервера
 ```bash
 uvicorn app.main:app --reload
