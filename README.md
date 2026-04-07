@@ -15,7 +15,7 @@ pip install uv
 
 ### 2. Клонирование и настройка проекта
 ```bash
-git clone <репозиторий>
+git clone git@github.com:LeonNaydStud/llm-p.git
 cd llm-p
 ```
 
